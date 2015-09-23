@@ -18,7 +18,7 @@ public class CustomerEJB implements CustomerRemote {
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
     
-    @PersistenceContext(unitName = "demoJEE6PU")
+    @PersistenceContext(unitName = "ProyectoFloristeriaPU")
     private EntityManager em;
 
     public String echo(String saying) {

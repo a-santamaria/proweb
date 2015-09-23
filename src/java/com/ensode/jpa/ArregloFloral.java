@@ -6,6 +6,7 @@
 package com.ensode.jpa;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -29,6 +30,12 @@ public class ArregloFloral implements Serializable {
     private String nombre;
     private Long precio;
     private String elementos;
+    
+    @Lob
+    private byte[] foto;
+    
+    @OneToMany
+    private List<Pedido> pedidos;
     
     
     public String getNombre() {
@@ -86,6 +93,22 @@ public class ArregloFloral implements Serializable {
     @Override
     public String toString() {
         return "com.ensode.jpa.ArregloFloral[ id=" + id + " ]";
+    }
+
+    public byte[] getFoto() {
+        return foto;
+    }
+
+    public void setFoto(byte[] foto) {
+        this.foto = foto;
+    }
+
+    public List<Pedido> getPedidos() {
+        return pedidos;
+    }
+
+    public void setPedidos(List<Pedido> pedidos) {
+        this.pedidos = pedidos;
     }
     
 }

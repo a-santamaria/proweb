@@ -17,7 +17,7 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class ArregloFloralEJB implements ArregloFloralRemote{
     
-    @PersistenceContext(unitName = "demoJEE6PU")
+    @PersistenceContext(unitName = "ProyectoFloristeriaPU")
     private EntityManager em;
     
     @Override

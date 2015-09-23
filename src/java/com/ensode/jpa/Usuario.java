@@ -26,6 +26,10 @@ public class Usuario implements Serializable {
     
     @OneToMany (mappedBy="usuario")
     private List<UserRole> userRoles;
+    
+    private String login;
+    private String userName;
+    private String password;
 
     public Long getId() {
         return id;

@@ -5,10 +5,12 @@
 package com.ensode.jpa;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -27,6 +29,12 @@ public class Customer implements Serializable {
     private String middleName;
     private String lastName;
     private String email;
+    
+    @OneToMany
+    private List<Pedido> pedidos;
+    
+    private Ciudad ciudad;
+    private Usuario usuario;
 
     public Long getId() {
         return id;
@@ -91,5 +99,29 @@ public class Customer implements Serializable {
     @Override
     public String toString() {
         return "com.ensode.jpaweb.Customer[ id=" + id + " ]";
+    }
+
+    public Ciudad getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(Ciudad ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public List<Pedido> getPedidos() {
+        return pedidos;
+    }
+
+    public void setPedidos(List<Pedido> pedidos) {
+        this.pedidos = pedidos;
     }
 }
