@@ -16,7 +16,7 @@ import javax.inject.Named;
  *
  * @author alfredo
  */
-@Named
+@Named (value="arregloFloralController")
 @RequestScoped
 public class ArregloFloralController {
     @EJB
@@ -25,9 +25,12 @@ public class ArregloFloralController {
     //@Inject
     private ArregloFloral arr = new ArregloFloral();
 
-    public void createArregloFloral(String nombre, Long precio, String descripcion){        
-
+    public String createArregloFloral(){
+        /*arr.setNombre("adfadfas");
+        arr.setPrecio(Long.MIN_VALUE);
+        arr.setElementos("adsfadsfa");*/
         arregloFEJB.salvar(arr);
+        return "void";
     }
     
     

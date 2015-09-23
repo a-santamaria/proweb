@@ -15,6 +15,7 @@ import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  *
@@ -27,8 +28,16 @@ public class ArregloFloral implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
+    @NotNull
+    @Size(min=3, max=20)
     private String nombre;
+    
+    @NotNull
     private Long precio;
+    
+    @NotNull
+    @Size(min=3, max=50)
     private String elementos;
     
     @Lob

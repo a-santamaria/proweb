@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
 
 /**
  *
@@ -27,6 +28,7 @@ public class Role implements Serializable {
     @OneToMany (mappedBy="role")
     private List<UserRole> userRoles;
     
+    @NotNull
     private String nombre;
     
     

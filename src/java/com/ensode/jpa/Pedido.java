@@ -14,6 +14,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 /**
  *
@@ -26,14 +29,33 @@ public class Pedido implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
+    
+    @NotNull
     private int unidades;
+    
+    @NotNull
     @Temporal(TemporalType.DATE)
     private Date fecha;
+    
+    @NotNull
     private long valor;
+    
+    @NotNull
+    @Size(min=16, max=16)
+    @Pattern(regexp="^\\d*$")
     private String creditCardNumber;
+    
+    @NotNull
+    @Size(min=3, max=20)
     private String creditCardName;
+    
+    @NotNull
     private int creditCardExpiryMonth;
+    
+    @NotNull
     private int creditCardExpiryYear;
+    
+    @NotNull
     private CreditCardType creditCardType;
     
     public Long getId() {

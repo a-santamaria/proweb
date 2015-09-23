@@ -12,6 +12,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  *
@@ -27,8 +29,16 @@ public class Usuario implements Serializable {
     @OneToMany (mappedBy="usuario")
     private List<UserRole> userRoles;
     
+    @NotNull
+    @Size(min=3, max=20)
     private String login;
+    
+    @NotNull
+    @Size(min=3, max=20)
     private String userName;
+    
+    @NotNull
+    @Size(min=3, max=20)
     private String password;
 
     public Long getId() {

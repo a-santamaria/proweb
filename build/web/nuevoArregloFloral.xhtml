@@ -8,33 +8,78 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <h:outputStylesheet name="./css/default.css"/>
         <h:outputStylesheet name="./css/cssLayout.css"/>
-        <title>Facelets Template</title>
+        <title>Nuevo Arreglo Floral</title>
     </h:head>
 
     <h:body>
 
         <div id="top">
-            <ui:insert name="top">Top</ui:insert>
+           <div id="top1">
+                <h2>FLORISTERÍA ALGO</h2> <a href="" >logout</a>                
+            </div>
+            
+            <div id="top2" align="center">
+            <img src="imgs/topBanner.jpg" alt="banner" height="100"/>
+            <img src="imgs/logo.png" alt="" height="100"/>
+            <img src="imgs/topBanner.jpg" alt="banner" height="100"/>
+            </div>
         </div>
 
         <div id="content" class="center_content">
             
             <h:form>
-                nombre: <h:inputText id="nombreArregloFloral"></h:inputText>
-                <br/>
-                precio: <h:inputText id="Precio" ></h:inputText>
-                <br/>
-                Digite la descripción del nuevo arreglo floral:
-                <textarea id="nuevoArregloFloral"></textarea>
-                <br/>
-               <input type="button" id="buttonNuevoArreglo" 
-                      value="dd"></input>
+                <table align="center">
+                    <tr>
+                        <td>nombre:</td>
+                        <td><h:inputText id="nombreArregloFloral" 
+                                         value="#{arregloFloralController.arr.nombre}"></h:inputText></td>
+                        
+                    </tr>
+                     
+                    <tr>
+                        <td>precio:</td>
+                        <td><h:inputText id="Precio" 
+                                         value="#{arregloFloralController.arr.precio}"></h:inputText></td>
+                    </tr>
+                    <tr>
+                        <td>Digite la descripción del nuevo arreglo floral:</td>
+                        <td><h:inputTextarea id="nuevoArregloFloral"
+                                      value="#{arregloFloralController.arr.elementos}"></h:inputTextarea></td>
+                    </tr>
+                    
+                    <tr>
+                        <td></td>
+                        <td>
+                            <h:commandButton id="buttonNuevoArreglo" 
+                                   value="crear" action="#{arregloFloralController.createArregloFloral}" />
+                        </td>
+                        
+                    </tr>
+                    
+                    
+                </table>
+                
             </h:form>
             
         </div>
 
         <div id="bottom">
-           
+            <table >
+                <th align="left" width="1000">
+                    <ul>
+                        <li>Dirección: diag 54 # 45-09</li>
+                        <li>Telefono: 234136</li>
+                        <li>Email: algo.floristeria@algo.com</li>
+                    </ul>
+                </th>
+                
+                <th align="left">
+                   Ubicación:<br/>
+                    <img src="imgs/location.png" alt="" height="150"/>
+                </th>
+                    
+                
+            </table>
         </div>
 
     </h:body>

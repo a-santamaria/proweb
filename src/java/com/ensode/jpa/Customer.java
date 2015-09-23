@@ -12,6 +12,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  *
@@ -25,15 +27,29 @@ public class Customer implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
+    @NotNull
+    @Size(min=3, max=20)
     private String firstName;
+    
+    @Size(min=3, max=20)
     private String middleName;
+    
+    @NotNull
+    @Size(min=3, max=20)
     private String lastName;
+    
+    @NotNull
+    @Size(min=3, max=20)
     private String email;
     
     @OneToMany
     private List<Pedido> pedidos;
     
+    @NotNull
     private Ciudad ciudad;
+    
+    @NotNull
     private Usuario usuario;
 
     public Long getId() {

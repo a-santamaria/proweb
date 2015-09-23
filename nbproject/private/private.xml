@@ -4,11 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/alfredo/Documents/Universidad/8/proweb/proweb/src/java/com/ensode/jpa/Pedido.java</file>
-            <file>file:/C:/Users/alfredo/Documents/Universidad/8/proweb/proweb/src/java/com/ensode/jpa/Role.java</file>
+            <file>file:/C:/Users/alfredo/Documents/Universidad/8/proweb/proweb/web/nuevoArregloFloral.xhtml</file>
+            <file>file:/C:/Users/alfredo/Documents/Universidad/8/proweb/proweb/web/index.xhtml</file>
             <file>file:/C:/Users/alfredo/Documents/Universidad/8/proweb/proweb/src/java/com/ensode/jpa/ArregloFloral.java</file>
-            <file>file:/C:/Users/alfredo/Documents/Universidad/8/proweb/proweb/src/java/com/ensode/jpa/Ciudad.java</file>
-            <file>file:/C:/Users/alfredo/Documents/Universidad/8/proweb/proweb/src/java/com/ensode/jpa/Usuario.java</file>
-            <file>file:/C:/Users/alfredo/Documents/Universidad/8/proweb/proweb/src/java/com/ensode/jpa/Customer.java</file>
+            <file>file:/C:/Users/alfredo/Documents/Universidad/8/proweb/proweb/web/index2.xhtml</file>
+            <file>file:/C:/Users/alfredo/Documents/Universidad/8/proweb/proweb/src/java/com/ensode/controller/ArregloFloralController.java</file>
         </group>
     </open-files>
 </project-private>
