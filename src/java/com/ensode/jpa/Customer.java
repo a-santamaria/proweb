@@ -46,10 +46,10 @@ public class Customer implements Serializable {
     @OneToMany
     private List<Pedido> pedidos;
     
-    @NotNull
+    //@NotNull
     private Ciudad ciudad;
     
-    @NotNull
+    //@NotNull
     private Usuario usuario;
 
     public Long getId() {

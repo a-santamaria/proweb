@@ -25,14 +25,6 @@ public class ArregloFloralController {
     //@Inject
     private ArregloFloral arr = new ArregloFloral();
 
-    public String createArregloFloral(){
-        /*arr.setNombre("adfadfas");
-        arr.setPrecio(Long.MIN_VALUE);
-        arr.setElementos("adsfadsfa");*/
-        arregloFEJB.salvar(arr);
-        return "void";
-    }
-    
     
     public ArregloFloral getArr() {
         return arr;
@@ -46,6 +38,6 @@ public class ArregloFloralController {
         //Save new customer data to database.
         arregloFEJB.salvar(arr);
 
-        return "arregloFloralConfirmation";
+        return "void";
     }
 }

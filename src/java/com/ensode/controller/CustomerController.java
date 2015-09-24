@@ -14,7 +14,7 @@ import javax.inject.Named;
  *
  * @author heffel
  */
-@Named
+@Named (value="customerController")
 @RequestScoped
 public class CustomerController {
     

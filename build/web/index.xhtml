@@ -17,21 +17,31 @@
             <div id="top1">
                 <h2>FLORISTERÍA ALGO</h2> <a href="" >logout</a>                
             </div>
-            
+
             <div id="top2" align="center">
-            <img src="imgs/topBanner.jpg" alt="banner" height="100"/>
-            <img src="imgs/logo.png" alt="" height="100"/>
-            <img src="imgs/topBanner.jpg" alt="banner" height="100"/>
+                <img src="imgs/topBanner.jpg" alt="banner" height="100"/>
+                <img src="imgs/logo.png" alt="" height="100"/>
+                <img src="imgs/topBanner.jpg" alt="banner" height="100"/>
             </div>
-            
-            
-            
-                
+
+            <h:outputText value="#{msg.SelectLanguage}:" />
+            <h:form id="language_form">
+                <h:commandLink
+                    action="#{languageSwitcher.changeLanguage('es')}"
+                    value="Spanish" /> |
+
+                <h:commandLink
+                    action="#{languageSwitcher.changeLanguage('en')}"
+                    value="English" />
+
+            </h:form>
+
+
         </div>
 
         <div id="content" class="center_content">
             <a href='faces/nuevoArregloFloral.xhtml'>Agregar Nuevo Arreglo Floral</a>
-            <input type="button" id="button" value="button">aloooo</input>
+            <a href="faces/CreateNewCustomer.xhtml">Agregar Nuevo Customer</a>
         </div>
 
         <div id="bottom">
@@ -43,15 +53,15 @@
                         <li>Email: algo.floristeria@algo.com</li>
                     </ul>
                 </th>
-                
+
                 <th align="left">
-                   Ubicación:<br/>
+                    Ubicación:<br/>
                     <img src="imgs/location.png" alt="" height="150"/>
                 </th>
-                    
-                
+
+
             </table>
-            
+
         </div>
 
     </h:body>
