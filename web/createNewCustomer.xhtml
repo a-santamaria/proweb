@@ -10,25 +10,25 @@
 
     <ui:define name="content">
          <h:form>
-             <h3>Create New Customer</h3>
+             <h3>#{msg.createCustomer}</h3>
             <h:panelGrid columns="3">
-                <h:outputLabel for="firstName" value="First Name"/> 
+                <h:outputLabel for="firstName" value="#{msg.firstName}"/> 
                 <h:inputText id="firstName" value="#{customerController.cust.firstName}"/>
                 <h:message for="firstName"/>
 
-                <h:outputLabel for="middleName" value="Middle Name"/> 
+                <h:outputLabel for="middleName" value="#{msg.middleName}"/> 
                 <h:inputText id="middleName" value="#{customerController.cust.middleName}"/>
                 <h:message for="middleName"/>
 
-                <h:outputLabel for="lastName" value="Last Name"/> 
+                <h:outputLabel for="lastName" value="#{msg.lastName}"/> 
                 <h:inputText id="lastName" value="#{customerController.cust.lastName}"/>
                 <h:message for="lastName"/>
 
-                <h:outputLabel for="email" value="Email Address"/> 
+                <h:outputLabel for="email" value="#{msg.email}"/> 
                 <h:inputText id="email" value="#{customerController.cust.email}"/>
                 <h:message for="email"/>
                 <h:panelGroup/>
-                <h:commandButton value="Submit" action="#{customerController.navigateToConfirmation}"/>
+                <h:commandButton value="#{msg.submit}" action="#{customerController.navigateToConfirmation}"/>
             </h:panelGrid>
         </h:form>
     </ui:define>

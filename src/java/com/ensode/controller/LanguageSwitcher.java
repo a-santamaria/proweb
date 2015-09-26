@@ -8,6 +8,7 @@ package com.ensode.controller;
 import java.io.Serializable;
 import java.util.Locale;
 import javax.enterprise.context.Dependent;
+import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
@@ -17,10 +18,10 @@ import javax.inject.Named;
  */
 //@ManagedBean (name= "languageSwitcher")
 @Named("languageSwitcher")
-@Dependent
+@RequestScoped
 public class LanguageSwitcher implements Serializable {
 
-    public Locale locale = FacesContext
+    public static Locale locale = FacesContext
             .getCurrentInstance().getViewRoot().getLocale();
 
     public Locale getLocale() {

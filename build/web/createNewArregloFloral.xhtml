@@ -10,22 +10,22 @@
 
     <ui:define name="content">
         <h:form>
-            <h3>Crear nuevo Arreglo Floral</h3>
+            <h3>#{msg.createFlowerArr}</h3>
             <h:panelGrid columns="3">
-                <h:outputLabel for="nombre" value="Nombre"/> 
+                <h:outputLabel for="nombre" value="#{msg.name}"/> 
                 <h:inputText id="nombre" value="#{arregloFloralController.arr.nombre}"/>
                 <h:message for="nombre"/>
                 
-                <h:outputLabel for="precio," value="Precio"/> 
+                <h:outputLabel for="precio," value="#{msg.price}"/> 
                 <h:inputText id="precio" value="#{arregloFloralController.arr.precio}"/>
                 <h:message for="precio"/>
 
-                <h:outputLabel for="elementos" value="Elementos"/> 
+                <h:outputLabel for="elementos" value="#{msg.elemnts}"/> 
                 <h:inputText id="elementos" value="#{arregloFloralController.arr.elementos}"/>
                 <h:message for="elementos"/>
 
                 <h:panelGroup/>
-                <h:commandButton value="Submit" action="#{arregloFloralController.navigateToConfirmation}"/>
+                <h:commandButton value="#{msg.submit}" action="#{arregloFloralController.navigateToConfirmation}"/>
             </h:panelGrid>
         </h:form>
     </ui:define>

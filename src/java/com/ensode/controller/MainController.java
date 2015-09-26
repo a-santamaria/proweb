@@ -27,4 +27,9 @@ public class MainController {
         lenguajeSwitcher.recordarIdioma();
         return "createNewArregloFloral";
     }
+    
+     public String navigateToIndex(){
+        lenguajeSwitcher.recordarIdioma();
+        return "index";
+    }
 }

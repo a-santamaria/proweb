@@ -6,9 +6,13 @@
 
     <application>
         <locale-config>
-            <default-locale>es</default-locale>
-            <supported-locale>en</supported-locale>
+            <default-locale>en</default-locale>
+            <supported-locale>es</supported-locale>
         </locale-config>
+        <resource-bundle>
+            <base-name>/com/ensode/properties/bundle</base-name>
+            <var>msg</var>
+        </resource-bundle>
     </application>
     
     <navigation-rule>

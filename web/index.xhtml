@@ -10,9 +10,9 @@
 
     <ui:define name="content">
         <h:form>
-            <h:commandButton value="New Customer" 
+            <h:commandButton value="#{msg.createCustomer}" 
                              action="#{mainController.navigateToNewCustomer()}"/>
-            <h:commandButton value="New Arreglo Floral" 
+            <h:commandButton value="#{msg.createFlowerArr}" 
                              action="#{mainController.navigateToNewArregloFloral()}"/>
         </h:form>
     </ui:define>

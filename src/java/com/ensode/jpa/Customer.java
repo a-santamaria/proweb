@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 /**
@@ -40,7 +41,8 @@ public class Customer implements Serializable {
     private String lastName;
     
     @NotNull
-    @Size(min=3, max=20)
+    @Pattern(regexp = "[a-zA-Z][a-zA-Z._0-9]*@[a-zA-Z._0-9]+(.[a-zA-Z._0-9]+)+",
+    message="{invalid.email}")
     private String email;
     
     @OneToMany
