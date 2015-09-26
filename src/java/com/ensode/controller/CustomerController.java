@@ -36,6 +36,6 @@ public class CustomerController {
         //Save new customer data to database.
         customerEJB.salvar(cust);
 
-        return "confirmation";
+        return "void";
     }
 }

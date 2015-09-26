@@ -37,7 +37,7 @@ public class LanguageSwitcher implements Serializable {
                 .getViewRoot().setLocale(locale);
     }
 
-    private void recordarIdioma() {
+    public void recordarIdioma() {
         // recuerda idioma establecido
         FacesContext.getCurrentInstance()
                 .getViewRoot().setLocale(locale);

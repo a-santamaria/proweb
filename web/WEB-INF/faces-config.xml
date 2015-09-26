@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<faces-config version="2.0"
+<faces-config version="2.1"
               xmlns="http://java.sun.com/xml/ns/javaee" 
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-              xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+              xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd">
 
     <application>
         <locale-config>
@@ -11,5 +11,33 @@
         </locale-config>
     </application>
     
+    <navigation-rule>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{mainController.navigateToNewCustomer}</from-action>
+            <to-view-id>/createNewCustomer.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{mainController.navigateToNewArregloFloral}</from-action>
+            <to-view-id>/createNewArregloFloral.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    <navigation-rule>
+        <from-view-id>/createNewCustomer.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{customerController.navigateToConfirmation}</from-action>
+            <to-view-id>/confirmationNewCustomer.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/createNewArregloFloral.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{arregloFloralController.navigateToConfirmation}</from-action>
+            <to-view-id>/confirmationNewArregloFloral.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
     
 </faces-config>

@@ -3,12 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/alfredo/Documents/Universidad/8/proweb/proweb/src/java/com/ensode/jpa/ArregloFloral.java</file>
+            <file>file:/C:/Users/alfredo/Documents/Universidad/8/proweb/proweb/src/java/com/ensode/controller/CustomerController.java</file>
+            <file>file:/C:/Users/alfredo/Documents/Universidad/8/proweb/proweb/web/WEB-INF/faces-config.xml</file>
+            <file>file:/C:/Users/alfredo/Documents/Universidad/8/proweb/proweb/web/Home.xhtml</file>
+            <file>file:/C:/Users/alfredo/Documents/Universidad/8/proweb/proweb/src/java/com/ensode/ejb/ArregloFloralEJB.java</file>
+            <file>file:/C:/Users/alfredo/Documents/Universidad/8/proweb/proweb/src/java/com/ensode/controller/ArregloFloralController.java</file>
+            <file>file:/C:/Users/alfredo/Documents/Universidad/8/proweb/proweb/web/CreateNewCustomer.xhtml</file>
             <file>file:/C:/Users/alfredo/Documents/Universidad/8/proweb/proweb/src/java/com/ensode/jpa/Pedido.java</file>
             <file>file:/C:/Users/alfredo/Documents/Universidad/8/proweb/proweb/web/nuevoArregloFloral.xhtml</file>
             <file>file:/C:/Users/alfredo/Documents/Universidad/8/proweb/proweb/web/index.xhtml</file>
-            <file>file:/C:/Users/alfredo/Documents/Universidad/8/proweb/proweb/src/java/com/ensode/jpa/ArregloFloral.java</file>
-            <file>file:/C:/Users/alfredo/Documents/Universidad/8/proweb/proweb/web/index2.xhtml</file>
-            <file>file:/C:/Users/alfredo/Documents/Universidad/8/proweb/proweb/src/java/com/ensode/controller/ArregloFloralController.java</file>
+            <file>file:/C:/Users/alfredo/Documents/Universidad/8/proweb/proweb/src/java/com/ensode/controller/LanguageSwitcher.java</file>
+            <file>file:/C:/Users/alfredo/Documents/Universidad/8/proweb/proweb/web/arregloFloral.xhtml</file>
+            <file>file:/C:/Users/alfredo/Documents/Universidad/8/proweb/proweb/src/java/com/ensode/controller/HacerPedidoController.java</file>
+            <file>file:/C:/Users/alfredo/Documents/Universidad/8/proweb/proweb/src/java/com/ensode/jpa/Customer.java</file>
+            <file>file:/C:/Users/alfredo/Documents/Universidad/8/proweb/proweb/src/java/com/ensode/ejb/HacerPedidoEJB.java</file>
         </group>
     </open-files>
 </project-private>
