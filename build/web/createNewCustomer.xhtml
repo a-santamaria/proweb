@@ -31,6 +31,9 @@
                 <h:commandButton value="#{msg.submit}" action="#{customerController.navigateToConfirmation}"/>
             </h:panelGrid>
         </h:form>
+        <h:form>
+            <h:commandButton value="#{msg.back}" action="#{customerController.navigateToBack}"/>
+        </h:form>
     </ui:define>
 
     <ui:define name="bottom">

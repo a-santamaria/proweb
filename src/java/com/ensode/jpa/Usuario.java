@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -20,18 +22,19 @@ import javax.validation.constraints.Size;
  * @author alfredo
  */
 @Entity
+@NamedQueries({
+    @NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u"),
+    @NamedQuery(name = "Usuario.findByPassword", query = "SELECT u FROM Usuario u WHERE u.password = :password"),
+    @NamedQuery(name = "Usuario.findByLogin", query = "SELECT u FROM Usuario u WHERE u.login = :login")})
 public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @Size(min=3, max=20)
+    private String login;
     
     @OneToMany (mappedBy="usuario")
     private List<UserRole> userRoles;
-    
-    @NotNull
-    @Size(min=3, max=20)
-    private String login;
+  
     
     @NotNull
     @Size(min=3, max=20)
@@ -41,18 +44,42 @@ public class Usuario implements Serializable {
     @Size(min=3, max=20)
     private String password;
 
-    public Long getId() {
-        return id;
+    public String getLogin() {
+        return login;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
-    @Override
+    public List<UserRole> getUserRoles() {
+        return userRoles;
+    }
+
+    public void setUserRoles(List<UserRole> userRoles) {
+        this.userRoles = userRoles;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    
+     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        hash += (login != null ? login.hashCode() : 0);
         return hash;
     }
 
@@ -63,7 +90,7 @@ public class Usuario implements Serializable {
             return false;
         }
         Usuario other = (Usuario) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if ((this.login == null && other.login != null) || (this.login != null && !this.login.equals(other.login))) {
             return false;
         }
         return true;
@@ -71,7 +98,6 @@ public class Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return "com.ensode.jpa.Usuario[ id=" + id + " ]";
+        return "co.edu.javeriana.secureapp.Users[ userid=" + login + " ]";
     }
-    
 }

@@ -25,6 +25,10 @@
             <from-action>#{mainController.navigateToNewArregloFloral}</from-action>
             <to-view-id>/createNewArregloFloral.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-action>#{customerController.selectCustomer}</from-action>
+            <to-view-id>/main.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
     
     
@@ -34,7 +38,20 @@
             <from-action>#{customerController.navigateToConfirmation}</from-action>
             <to-view-id>/confirmationNewCustomer.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-action>#{customerController.navigateToBack}</from-action>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/confirmationNewCustomer.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{customerController.navigateToBack}</from-action>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
     
     <navigation-rule>
         <from-view-id>/createNewArregloFloral.xhtml</from-view-id>
@@ -43,5 +60,7 @@
             <to-view-id>/confirmationNewArregloFloral.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    
+    
     
 </faces-config>

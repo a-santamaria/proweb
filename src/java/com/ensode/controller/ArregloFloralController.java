@@ -21,6 +21,7 @@ import javax.inject.Named;
 public class ArregloFloralController {
     @EJB
     private ArregloFloralRemote arregloFEJB;
+    LanguageSwitcher lenguajeSwitcher = new LanguageSwitcher();
     
     //@Inject
     private ArregloFloral arr = new ArregloFloral();
@@ -37,7 +38,13 @@ public class ArregloFloralController {
     public String navigateToConfirmation() {
         //Save new customer data to database.
         arregloFEJB.salvar(arr);
-
+        lenguajeSwitcher.recordarIdioma();
+        return "void";
+    }
+    
+    public String navigateToBack() {
+        //Save new customer data to database.
+        lenguajeSwitcher.recordarIdioma();
         return "void";
     }
 }

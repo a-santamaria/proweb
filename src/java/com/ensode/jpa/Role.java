@@ -22,28 +22,34 @@ import javax.validation.constraints.NotNull;
 public class Role implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
-    @OneToMany (mappedBy="role")
-    private List<UserRole> userRoles;
-    
-    @NotNull
     private String nombre;
     
-    
-    public Long getId() {
-        return id;
+    @OneToMany (mappedBy="role")
+    private List<UserRole> userRoles;
+
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
+
+    public List<UserRole> getUserRoles() {
+        return userRoles;
+    }
+
+    public void setUserRoles(List<UserRole> userRoles) {
+        this.userRoles = userRoles;
+    }
+
+    
+
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        hash += (nombre != null ? nombre.hashCode() : 0);
         return hash;
     }
 
@@ -54,7 +60,7 @@ public class Role implements Serializable {
             return false;
         }
         Role other = (Role) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if ((this.nombre == null && other.nombre != null) || (this.nombre != null && !this.nombre.equals(other.nombre))) {
             return false;
         }
         return true;
@@ -62,7 +68,7 @@ public class Role implements Serializable {
 
     @Override
     public String toString() {
-        return "com.ensode.jpa.Role[ id=" + id + " ]";
+        return "com.ensode.jpa.Role[ id=" + nombre + " ]";
     }
     
 }

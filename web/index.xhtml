@@ -1,8 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
                 template="./floristeriaTemplate.xhtml"
-                xmlns:h="http://xmlns.jcp.org/jsf/html">
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <ui:define name="top">
 
@@ -14,6 +16,26 @@
                              action="#{mainController.navigateToNewCustomer()}"/>
             <h:commandButton value="#{msg.createFlowerArr}" 
                              action="#{mainController.navigateToNewArregloFloral()}"/>
+            
+            <p:dataTable id="customers" value="#{customerController.obtainCustomers()}"
+                         binding="#{customerController.tablaCustomers}"
+                         var="cust"
+                         >
+                <p:column>
+                    <f:facet name="header">#{msg.firstName}</f:facet>
+                    #{cust.firstName}
+                </p:column>
+                <p:column>
+                    <f:facet name="header">#{msg.lastName}</f:facet>
+                    #{cust.lastName}
+                </p:column>
+                
+                <p:column>
+                    <h:commandButton value="view Customer"
+                                     action="#{customerController.selectCustomer}" />
+                </p:column>
+                
+            </p:dataTable>
         </h:form>
     </ui:define>
 

@@ -5,6 +5,7 @@
 package com.ensode.ejb;
 
 import com.ensode.jpa.Customer;
+import java.util.List;
 
 /**
  *
@@ -13,4 +14,6 @@ import com.ensode.jpa.Customer;
 public interface CustomerRemote {
     public String echo(String saying);
     public void salvar(Customer c);
+    public List<Customer> findAll();
+    public List<Customer> findCustomer(Customer selected);
 }

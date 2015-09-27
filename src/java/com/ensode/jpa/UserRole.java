@@ -6,6 +6,7 @@
 package com.ensode.jpa;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -38,6 +39,8 @@ public class UserRole implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+    
+    
 
     @Override
     public int hashCode() {
@@ -63,5 +66,6 @@ public class UserRole implements Serializable {
     public String toString() {
         return "com.ensode.jpa.UserRole[ id=" + id + " ]";
     }
+
     
 }
