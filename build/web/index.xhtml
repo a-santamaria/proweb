@@ -26,9 +26,30 @@
                     #{cust.firstName}
                 </p:column>
                 <p:column>
+                    <f:facet name="header">#{msg.middleName}</f:facet>
+                    #{cust.middleName}
+                </p:column>
+                <p:column>
                     <f:facet name="header">#{msg.lastName}</f:facet>
                     #{cust.lastName}
                 </p:column>
+                <p:column>
+                    <f:facet name="header">#{msg.email}</f:facet>
+                    #{cust.email}
+                </p:column>
+                <p:column>
+                    <f:facet name="header">#{msg.city}</f:facet>
+                    #{cust.city}
+                </p:column>
+                <p:column>
+                    <f:facet name="header">#{msg.phone}</f:facet>
+                    #{cust.phone}
+                </p:column>
+                <p:column>
+                    <f:facet name="header">#{msg.address}</f:facet>
+                    #{cust.address}
+                </p:column>
+                
                 
                 <p:column>
                     <h:commandButton value="view Customer"

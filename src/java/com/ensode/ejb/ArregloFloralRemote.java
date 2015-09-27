@@ -6,6 +6,7 @@
 package com.ensode.ejb;
 
 import com.ensode.jpa.ArregloFloral;
+import java.util.List;
 
 /**
  *
@@ -14,4 +15,9 @@ import com.ensode.jpa.ArregloFloral;
 public interface ArregloFloralRemote {
     public String echo(String saying);
     public void salvar(ArregloFloral a);
+
+    public List<ArregloFloral> findAll();
+
+
+    public List<ArregloFloral> findArreglo(ArregloFloral selected);
 }

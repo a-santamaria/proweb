@@ -10,6 +10,7 @@ import java.awt.BorderLayout;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.inject.Named;
@@ -28,6 +29,7 @@ public class CustomerController {
     LanguageSwitcher lenguajeSwitcher = new LanguageSwitcher();
     private DataModel customers;
     private Customer selectedCust;
+    public static Customer selectedCust2;
     private List<Customer> customerslist;
     private DataTable tablaCustomers;
 
@@ -71,7 +73,9 @@ public class CustomerController {
     }
     
     public String selectCustomer(){
+        
         selectedCust = (Customer) tablaCustomers.getRowData();
+        selectedCust2 = selectedCust;
         customerslist = customerEJB.findCustomer(selectedCust);
         lenguajeSwitcher.recordarIdioma();
         return "void";

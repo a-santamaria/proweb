@@ -45,15 +45,23 @@ public class Customer implements Serializable {
     private String lastName;
     
     @NotNull
-    @Pattern(regexp = "[a-zA-Z][a-zA-Z._0-9]*@[a-zA-Z._0-9]+(.[a-zA-Z._0-9]+)+",
-    message="{invalid.email}")
+    @Size(min=3, max=20)
+    private String address;
+    
+    @NotNull
+    @Pattern(regexp = "[0-9]+" )
+    @Size(min=3, max=20)
+    private String phone;
+    
+    @NotNull
+    @Pattern(regexp = "[a-zA-Z][a-zA-Z._0-9]*@[a-zA-Z._0-9]+(.[a-zA-Z._0-9]+)+")
     private String email;
     
     @OneToMany
     private List<Pedido> pedidos;
     
-    //@NotNull
-    private Ciudad ciudad;
+    @NotNull
+    private Ciudad city;
     
     //@NotNull
     private Usuario usuario;
@@ -98,6 +106,14 @@ public class Customer implements Serializable {
         this.email = email;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 0;
@@ -123,12 +139,12 @@ public class Customer implements Serializable {
         return "com.ensode.jpaweb.Customer[ id=" + id + " ]";
     }
 
-    public Ciudad getCiudad() {
-        return ciudad;
+    public Ciudad getCity() {
+        return city;
     }
 
-    public void setCiudad(Ciudad ciudad) {
-        this.ciudad = ciudad;
+    public void setCity(Ciudad city) {
+        this.city = city;
     }
 
     public Usuario getUsuario() {
@@ -146,4 +162,14 @@ public class Customer implements Serializable {
     public void setPedidos(List<Pedido> pedidos) {
         this.pedidos = pedidos;
     }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+    
+    
 }

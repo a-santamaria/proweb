@@ -3,7 +3,9 @@
 <ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 template="./floristeriaTemplate.xhtml"
                 xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:h="http://xmlns.jcp.org/jsf/html">
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <ui:define name="top">
     </ui:define>
@@ -27,6 +29,23 @@
                 <h:outputLabel for="email" value="#{msg.email}"/> 
                 <h:inputText id="email" value="#{customerController.cust.email}"/>
                 <h:message for="email"/>
+                
+                <h:outputLabel for="address" value="#{msg.address}"/> 
+                <h:inputText id="address" value="#{customerController.cust.address}"/>
+                <h:message for="address"/>
+                
+                <h:outputLabel for="phone" value="#{msg.phone}"/> 
+                <h:inputText id="phone" value="#{customerController.cust.phone}"/>
+                <h:message for="phone"/>
+                
+                <h:outputLabel for="city" value="#{msg.city}"/> 
+                <p:selectOneMenu id="city" value="#{customerController.cust.city}">
+                    <f:selectItem itemLabel="#{msg.city}" itemValue=""/>
+                    <f:selectItems value="#{dropDownView.cities}"/>
+                </p:selectOneMenu>
+                <h:message for="city"/>
+                
+                
                 <h:panelGroup/>
                 <h:commandButton value="#{msg.submit}" action="#{customerController.navigateToConfirmation}"/>
             </h:panelGrid>

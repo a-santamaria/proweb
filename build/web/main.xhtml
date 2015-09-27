@@ -1,18 +1,67 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-                template="./floristeriaTemplate.xhtml">
+                template="./floristeriaTemplate.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <ui:define name="top">
-        top
+
     </ui:define>
 
     <ui:define name="content">
-        entre
+        <h:form>
+            <p:dataTable id="arreglosFloralesCustomer" value="#{hacerPedidoController.obtainPedidos()}"
+                         binding="#{hacerPedidoController.tablaPedidos}"
+                         var="ped"
+                         >
+                <p:column>
+                    <f:facet name="header">#{msg.date}</f:facet>
+                        #{ped.fecha}
+                </p:column>
+                <p:column>
+                    <f:facet name="header">#{msg.units}</f:facet>
+                        #{ped.unidades}
+                </p:column>
+                <p:column>
+                    <f:facet name="header">#{msg.value}</f:facet>
+                        #{ped.valor}
+                </p:column>
+
+            </p:dataTable>
+        </h:form>
+
+
+        <h:form>
+            <p:dataTable id="arreglosFlorales" value="#{arregloFloralController.obtainArreglos()}"
+                         binding="#{arregloFloralController.tablaArreglos}"
+                         var="arr"
+                         >
+                <p:column>
+                    <f:facet name="header">#{msg.name}</f:facet>
+                        #{arr.nombre}
+                </p:column>
+                <p:column>
+                    <f:facet name="header">#{msg.price}</f:facet>
+                        #{arr.precio}
+                </p:column>
+                <p:column>
+                    <f:facet name="header">#{msg.elemnts}</f:facet>
+                        #{arr.elementos}
+                </p:column>
+
+                <p:column>
+                    <h:commandButton value="#{msg.createOrder}"
+                                     action="#{arregloFloralController.selectedArreglo}" />
+                </p:column>
+
+            </p:dataTable>
+        </h:form>
     </ui:define>
 
     <ui:define name="bottom">
-        bottom
+
     </ui:define>
 
 </ui:composition>

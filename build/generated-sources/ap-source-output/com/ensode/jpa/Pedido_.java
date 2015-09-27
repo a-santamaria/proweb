@@ -1,12 +1,13 @@
 package com.ensode.jpa;
 
 import com.ensode.jpa.CreditCardType;
+import com.ensode.jpa.Customer;
 import java.util.Date;
 import javax.annotation.Generated;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2015-09-27T13:27:02")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2015-09-27T17:33:45")
 @StaticMetamodel(Pedido.class)
 public class Pedido_ { 
 
@@ -19,5 +20,6 @@ public class Pedido_ {
     public static volatile SingularAttribute<Pedido, Long> valor;
     public static volatile SingularAttribute<Pedido, Long> id;
     public static volatile SingularAttribute<Pedido, CreditCardType> creditCardType;
+    public static volatile SingularAttribute<Pedido, Customer> customer;
 
 }
