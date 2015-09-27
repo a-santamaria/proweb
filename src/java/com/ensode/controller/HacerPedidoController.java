@@ -40,7 +40,13 @@ public class HacerPedidoController {
         List<Pedido> lista = new ArrayList<Pedido>();
         return lista;
     }
-
+     
+    public String navigateToBack() {
+        //Save new customer data to database.
+        lenguajeSwitcher.recordarIdioma();
+        return "void";
+    }
+     
     public LanguageSwitcher getLenguajeSwitcher() {
         return lenguajeSwitcher;
     }
