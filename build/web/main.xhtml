@@ -35,7 +35,7 @@
 
         <h:form>
             <p:dataTable id="arreglosFlorales" value="#{arregloFloralController.obtainArreglos()}"
-                         binding="#{arregloFloralController.tablaArreglos}"
+                         binding="#{hacerPedidoController.tablaArreglos}"
                          var="arr"
                          >
                 <p:column>
@@ -53,7 +53,7 @@
 
                 <p:column>
                     <h:commandButton value="#{msg.createOrder}"
-                                     action="#{arregloFloralController.selectedArreglo}" />
+                                     action="#{hacerPedidoController.selectArreglo}" />
                 </p:column>
 
             </p:dataTable>

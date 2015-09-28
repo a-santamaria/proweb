@@ -5,8 +5,10 @@
  */
 package com.ensode.controller;
 
+import static com.ensode.controller.CustomerController.selectedCust2;
 import com.ensode.ejb.HacerPedidoEJB;
 import com.ensode.jpa.ArregloFloral;
+import com.ensode.jpa.Customer;
 import com.ensode.jpa.Pedido;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,9 +27,10 @@ import org.primefaces.component.datatable.DataTable;
 public class HacerPedidoController {
     LanguageSwitcher lenguajeSwitcher = new LanguageSwitcher();
     private DataModel arreglosFlorales;
-    private ArregloFloral selectedPedido;
+    private ArregloFloral selectedArreglo;
     private List<ArregloFloral> arregloslist;
     private DataTable tablaPedidos;
+    private DataTable tablaArreglos;
     
     @EJB
     private HacerPedidoEJB hacerPedidoEJB; 
@@ -35,11 +38,26 @@ public class HacerPedidoController {
     
      public List<Pedido> obtainPedidos() {
         Long id;
-        //id = CustomerController.selectedCust2.getId();
-        //List<Pedido> lista = hacerPedidoEJB.findPedidoByCustomer(id);
-        List<Pedido> lista = new ArrayList<Pedido>();
-        return lista;
+        if(selectedArreglo != null){
+            id = selectedArreglo.getId();
+            List<Pedido> lista = hacerPedidoEJB.findPedidoByCustomer(id);
+            return lista;
+        }
+        return new ArrayList<Pedido>();
     }
+    /* 
+     public List<ArregloFloral> obtainArreglos() {
+        ArregloFloralController arrc = new ArregloFloralController();
+        List<ArregloFloral> lista = arrc.obtainArreglos();
+        return lista;
+    }*/
+     
+    public String selectArreglo(){
+        
+        selectedArreglo = (ArregloFloral) tablaArreglos.getRowData();
+        lenguajeSwitcher.recordarIdioma();
+        return "void";
+    } 
      
     public String navigateToBack() {
         //Save new customer data to database.
@@ -63,13 +81,22 @@ public class HacerPedidoController {
         this.arreglosFlorales = arreglosFlorales;
     }
 
-    public ArregloFloral getSelectedPedido() {
-        return selectedPedido;
+    public DataTable getTablaArreglos() {
+        return tablaArreglos;
     }
 
-    public void setSelectedPedido(ArregloFloral selectedPedido) {
-        this.selectedPedido = selectedPedido;
+    public void setTablaArreglos(DataTable tablaArreglos) {
+        this.tablaArreglos = tablaArreglos;
     }
+
+    public ArregloFloral getSelectedArreglo() {
+        return selectedArreglo;
+    }
+
+    public void setSelectedArreglo(ArregloFloral selectedArreglo) {
+        this.selectedArreglo = selectedArreglo;
+    }
+
 
     public List<ArregloFloral> getArregloslist() {
         return arregloslist;
